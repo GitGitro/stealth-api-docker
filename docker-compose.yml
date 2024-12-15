@@ -1,0 +1,13 @@
+version: '3.9'
+services:
+  stealth-api:
+    image: 'gitgitro/stealth-api:latest'
+    build:
+      context: .
+      args:
+        URL: "https://stealth.gitro.xyz"
+        KEY: "somekey"
+        PORT: "8080"
+    restart: unless-stopped
+    ports:
+      - 8080:8080
